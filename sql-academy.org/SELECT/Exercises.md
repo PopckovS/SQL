@@ -76,6 +76,68 @@ WHERE plane = 'TU-134';
 ---
 
 
+##№ 6
+####Задача:
+Какие компании совершали перелеты на Boeing
+####Условие:
+Поля в результирующей таблице: name
+####Решение:
+```sql
+SELECT DISTINCT 
+                cm.name
+FROM Company AS cm 
+INNER JOIN Trip AS tr ON cm.id = tr.company
+WHERE 
+      tr.plane = "Boeing"
+```
+Есть 2 таблицы, с компаниями и путешествиями, соединяем их по
+внешнему ключу, получаем те компании из таблицы компании, у
+которых в другой таблице тип самолета это "Boeing"
+---
+
+
+##№ 7
+####Задача:
+Вывести все названия самолётов, на которых можно улететь в Москву (Moscow)
+####Условие:
+Поля в результирующей таблице: plane
+####Решение:
+```sql
+SELECT DISTINCT  
+                plane 
+FROM Trip AS tr 
+WHERE town_to = 'Moscow'
+```
+---
+
+
+##№ 8
+####Задача:
+
+####Условие:
+
+####Решение:
+```sql
+
+```
+---
+
+
+##№ 9
+####Задача:
+Какие компании организуют перелеты с Владивостока (Vladivostok)?
+####Условие:
+Поля в результирующей таблице: name
+####Решение:
+```sql
+SELECT DISTINCT cm.name 
+FROM Company AS cm INNER JOIN Trip AS tr 
+ON cm.id = tr.company
+WHERE town_from = 'Vladivostok';
+```
+---
+
+
 ##№ ?
 ####Задача:
 
