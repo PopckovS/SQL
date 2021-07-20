@@ -138,6 +138,100 @@ WHERE town_from = 'Vladivostok';
 ---
 
 
+##№ 12
+####Задача:
+Вывести id и количество пассажиров для всех прошедших полётов
+####Условие:
+Поля в результирующей таблице: trip, count
+####Решение:
+```sql
+SELECT 
+    pit.trip as trip, count(pr.id) as count
+FROM 
+    Pass_in_trip AS pit INNER JOIN Passenger AS pr ON pit.passenger = pr.id
+GROUP BY 
+    trip
+;
+```
+Это типичный, стандартный пример обычной группировки, есть 2 таблицы связанные
+по внешнему ключу, одна путешествий и другая с пассажирами, что на эти 
+путешествия зарегистрированы, соединяем таблицы, группируем по путешествиям,
+и к каждому из путешествий используем агрегатную функцию count, чтобы
+посчитать количество пассажиров, зарегистрированных для каждого из путешествий.
+---
+
+
+
+##№ 14
+####Задача:
+В какие города летал Bruce Willis
+####Условие:
+Поля в результирующей таблице: town_to
+####Решение 1:
+```sql
+SELECT DISTINCT 
+    tr.town_to
+FROM 
+    Trip AS tr 
+    INNER JOIN Pass_in_trip AS pit ON tr.id = pit.trip 
+    INNER JOIN Passenger AS pa ON  pit.passenger = pa.id 
+WHERE 
+    pa.name = 'Bruce Willis';
+```
+Из-за того что имена пассажиров лежат в одной таблице, а города 
+для полета в другой, и связаны между собой они через связующую таблицу,
+нам приходится делать 2 связки, чтобы соединить 3 таблицы.
+
+####Решение 2:
+```sql
+SELECT town_to 
+FROM Trip 
+WHERE id IN(
+    SELECT trip 
+    FROM  Pass_in_trip 
+    WHERE Passenger IN(
+        SELECT id 
+        FROM Passenger 
+        WHERE name = 'Bruce Willis'
+    ) 
+) 
+```
+Это второй способ решения данной задачи, она основана на 2 
+под запросах, суть ее решение следующая.
+
+Первый запрос:
+```sql
+    SELECT id from Passenger WHERE name = 'Bruce Willis'
+    -- Получаем
+    --        1 
+    --       31
+``` 
+
+Второй запрос:
+```sql
+    SELECT * FROM  Pass_in_trip 
+    WHERE Passenger IN(1,31) 
+    -- Получаем
+    -- 1	1100	1	1a
+    -- 3	1123	1	4c
+    -- 7	1181	1	1a
+```
+
+Внешний запрос:
+```sql
+SELECT * FROM Trip 
+WHERE id IN(1100, 1123, 1181) 
+-- Получаем
+-- 1100	 4	Boeing	Rostov	Paris	   
+-- 1123	 3	TU-154	Rostov	Vladivostok
+-- 1181	 1	TU-134	Rostov	Moscow
+```
+---
+
+
+
+
+
 ##№ ?
 ####Задача:
 
