@@ -1,7 +1,7 @@
 # SQL
 ___
 Практическое владение языком SQL
-___
+
 
 1) Упражнения с сайта [sql-academy.org :](https://sql-academy.org/)
     - [Задачи на `SELECT`](sql-academy.org/SELECT/Exercises.md)
@@ -9,3 +9,14 @@ ___
 
 2) Упражнения с сайта [sql-ex.ru :](http://sql-ex.ru)
     - `SELECT` (обучающий этап): [без выбора СУБД](sql-ex.ru/SELECT%20(обучающий%20этап)/Exercises.md)
+
+---
+
+Теория SQL
+
+1) Интересные вопросы по SQL 
+   
+   - [Часть 1](Theory/Lesson-1.md)  
+   
+
+
