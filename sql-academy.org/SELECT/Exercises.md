@@ -228,7 +228,24 @@ WHERE id IN(1100, 1123, 1181)
 ```
 ---
 
-
+##№ 15
+####Задача:
+Во сколько Стив Мартин (Steve Martin) прилетел в Лондон (London)
+####Условие:
+Поля в результирующей таблице: time_in
+####Решение:
+Это типичный пример обыкновенного джоина.
+```sql
+SELECT 
+       time_in 
+FROM 
+     Trip as tr
+INNER JOIN Pass_in_trip AS pit ON tr.id = pit.trip
+INNER JOIN Passenger AS pa ON pit.passenger = pa.id
+WHERE 
+      pa.name = "Steve Martin" AND tr.town_to = "London";
+```
+---
 
 
 
