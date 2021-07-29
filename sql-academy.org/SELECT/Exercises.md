@@ -247,6 +247,25 @@ WHERE
 ```
 ---
 
+##№ 19
+####Задача:
+Определить, кто из членов семьи покупал картошку (potato)
+####Условие:
+Поля в результирующей таблице: status
+####Решение:
+Это типичный пример обыкновенного, просто связываем таблицы и отсеиваем
+на предмет товара "Картошка".
+```sql
+SELECT DISTINCT 
+                fm.status
+FROM 
+     FamilyMembers AS fm 
+INNER JOIN Payments AS pay ON fm.member_id = pay.family_member
+INNER JOIN Goods AS go ON pay.good = go.good_id
+WHERE 
+    go.good_name = "potato";
+```
+---
 
 
 ##№ ?
