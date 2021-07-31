@@ -288,8 +288,21 @@ WHERE
 ```
 ---
 
-
-
+##№ 23
+####Задача:
+Сколько рейсов совершили авиакомпании с Ростова 
+(Rostov) в Москву (Moscow) ?
+####Условие:
+Поля в результирующей таблице: count(*)
+####Решение:
+```sql
+SELECT count(*) AS count
+FROM 
+    Trip AS tr 
+WHERE 
+    town_from = "Rostov" AND town_to = "Moscow";
+```
+---
 
 
 
