@@ -322,9 +322,50 @@ WHERE name LIKE("10%")
 ```
 ---
 
+##№ 36
+####Задача:
+Выведите информацию об обучающихся живущих на улице 
+Пушкина (ul. Pushkina)?
+####Условие:
+Поля в результирующей таблице: *
+####Решение:
+```sql
+SELECT *
+FROM Student
+WHERE address LIKE("%ul. Pushkina%");
+```
+---
+
+##№ 38
+####Задача:
+Сколько Анн (Anna) учится в школе ?
+####Условие:
+Поля в результирующей таблице: count
+####Решение:
+```sql
+SELECT count(*) as count 
+FROM Student
+WHERE first_name = "Anna";
+```
+---
 
 
-
+##№ 39
+####Задача:
+Сколько обучающихся в 10 B классе ?
+####Условие:
+Поля в результирующей таблице: count
+####Решение:
+```sql
+SELECT 
+       count(*) as count 
+FROM 
+    Student_in_class AS sic 
+    INNER JOIN Class AS cs ON sic.class = cs.id 
+WHERE 
+    cs.name LIKE("10 B");
+```
+---
 
 
 ##№ ?
