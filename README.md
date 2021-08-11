@@ -8,7 +8,7 @@ ___
 
 
 2) Упражнения с сайта [sql-ex.ru :](http://sql-ex.ru)
-    - [Задачи на `SELECT` без выбора СУБД](sql-ex.ru/SELECT%20(обучающий%20этап)/Exercises.md)
+    - [Задачи на `SELECT` без выбора СУБД](sql-ex.ru/SELECT/Exercises.md)
 
 ---
 
