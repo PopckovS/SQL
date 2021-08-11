@@ -642,6 +642,36 @@ WHERE id = 4
 ---
 
 
+№ 46
+---
+
+**Задача:**
+
+В каких классах введет занятия преподаватель "Krauze" ?
+
+**Условие:**
+
+Поля в результирующей таблице: name
+
+**Решение:**
+
+```sql
+SELECT DISTINCT cl.name  
+FROM Schedule AS sc 
+INNER JOIN Teacher AS tc ON sc.teacher = tc.id 
+INNER JOIN Class AS cl ON sc.class = cl.id 
+WHERE tc.last_name = "Krauze";
+```
+---
+
+
+
+
+
+
+
+
+
 
 № ?
 ---
