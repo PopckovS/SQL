@@ -7,6 +7,7 @@ SQL - structured query language
 
 1) [Уникальный идентификатор `UUID`](Theory/uuid.md)
 
+2) [Создание представлений](Theory/view.md)
 
 ___
 Практическое владение языком SQL
