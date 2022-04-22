@@ -21,6 +21,12 @@ ___
     - [Задачи на `SELECT` без выбора СУБД](Practice/sql-ex.ru/SELECT/Exercises.md)
 
 ---
+Права, Пользователи и Роли
+---
+
+1) [Часть 1](Theory/users.md)
+
+---
 Другое
 ---
 
