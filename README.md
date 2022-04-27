@@ -5,9 +5,11 @@ SQL - structured query language
 Теория SQL, диалект pgSQL
 ---
 
-1) [Уникальный идентификатор `UUID`](Theory/uuid.md)
+1) [](Theory/)
 
-2) [Создание представлений](Theory/view.md)
+2) [Уникальный идентификатор `UUID`](Theory/uuid.md)
+
+3) [Создание представлений](Theory/view.md)
 
 ___
 Практическое владение языком SQL
