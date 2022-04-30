@@ -1,11 +1,10 @@
 SQL - structured query language
 ---
 
----
 Теория SQL, диалект pgSQL
 ---
 
-1) [](Theory/)
+1) [Установка](Theory/install.md)
 
 2) [Уникальный идентификатор `UUID`](Theory/uuid.md)
 
