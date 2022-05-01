@@ -6,10 +6,13 @@ SQL - structured query language
 
 1) [Установка](Theory/install.md)
 
-2) [Уникальный идентификатор `UUID`](Theory/uuid.md)
+2) [Администрирование `Postgres`](Theory/lesson_1.md)
 
-3) [Создание представлений](Theory/view.md)
+3) [Уникальный идентификатор `UUID`](Theory/uuid.md)
 
+4) [Создание представлений](Theory/view.md)
+
+5) [Расширения](Theory/app_1.md)
 ___
 Практическое владение языком SQL
 ---
