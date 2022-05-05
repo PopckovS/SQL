@@ -1,7 +1,7 @@
-SQL - structured query language
+SQL 
 ---
 
-Теория SQL, диалект pgSQL
+Установка, администрирование.
 ---
 
 1) [Установка](Theory/install.md)
@@ -13,6 +13,12 @@ SQL - structured query language
 4) [Создание представлений](Theory/view.md)
 
 5) [Расширения](Theory/app_1.md)
+
+
+---
+Теория SQL
+---
+
 ___
 Практическое владение языком SQL
 ---
