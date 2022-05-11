@@ -14,6 +14,7 @@ SQL
 
 5) [Расширения](Theory/app_1.md)
 
+6) [Транзакции `ACID`](Theory/transaction_1.md)
 
 ---
 Теория SQL
