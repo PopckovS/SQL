@@ -86,3 +86,60 @@ Postgres Часть 3
 	    distinct a.first_name, a.last_name 
     from
 	    actor a;
+
+---
+Группировки
+---
+
+Найдем количество записей которые повторяются более 1 раза полю Имени.
+
+    SELECT 
+         first_name, count(*) as FirstNameCounter
+    FROM 
+        actor AS a
+    GROUP BY
+        first_name
+    HAVING 
+        count(first_name) > 1;
+
+Найдем поля у которых, записи не уникальны по 2 полям, записи у 
+которых 2 поля содержат повторяющиеся значения.
+
+    SELECT 
+	    first_name, last_name
+    FROM 
+        actor AS a
+    GROUP BY 
+        first_name, last_name 
+    HAVING 
+        count(first_name) > 1;	
+
+---
+Методы `NOW(), INTERVAL '...'`
+---
+
+Получить дату и время
+
+    SELECT NOW(); 
+    2021-05-24 06:54:39
+
+Фильтрация даты
+
+    SELECT NOW()::DATE;
+    2021-05-24
+
+Фильтрация на время
+
+    SELECT NOW()::TIME;
+    06:56:17
+
+Функция `INTERVAL` добавляет/вычитает из даты время:
+
+    SELECT NOW() - INTERVAL '1 YEAR';
+    2020-05-24 06:58:16
+
+Синтаксис для других дат:
+
+    1 YEAR
+    10 MONTS
+    10 DAYS
