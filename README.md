@@ -11,11 +11,11 @@ SQL
 
 1) [Установка](Admin/install.md)
 
-2) [Администрирование `Postgres`](Theory/lesson_1.md)
+2) [Администрирование `Postgres`](Admin/lesson_1.md)
 
-3) [Системные таблицы](Theory/lesson_2.md)
+3) [Системные таблицы](Admin/lesson_2.md)
 
-5) [Расширения](Theory/app_1.md)
+5) [Расширения](Admin/app_1.md)
 
 
 Права, Пользователи и Роли
