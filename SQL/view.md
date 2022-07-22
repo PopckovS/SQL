@@ -56,6 +56,75 @@ CREATE VIEW view_name AS
 
 ---
 
+Предположим что у нас есть запрос что объединяет 3 таблицы, и получает данные
+по условию `WHERE`.
+
+```sql
+    SELECT name, contact
+    FROM Customers, Orders, OrderItem
+    WHERE Customers.cust_id = Orders.cust_id
+    AND OrderItem.order_num = Orders.order_num
+    AND prod_id = 'RGAN01';
+```
+
+Теперь предположим что весь этот запрос можно сохранить в виде
+Динамически сгенерированной таблицы `ProductCustomers`.
+
+Тогда уже имея эту новую таблицу, можно извлечь из нее данные
+при помощи след запроса.
+
+```sql
+    SELECT name, contact
+    FROM ProductCustomers
+    WHERE prod_id = 'RGAN01';
+```
+
+Таблица `ProductCustomers` и называется представлением, она не хранит
+столбцов с их описанием, в место этого она хранит сам запрос.
+
+---
+Создание представлений. `CREATE VIEW`, `DROP VIEW`
+---
+
+Создаются представления при помощи `CREATE VIEW` по аналогии с 
+`CREATE TABLE`. Такую инструкцию можно использовать только для 
+создания представления. 
+
+Удаления представления происходит при помощи `DROP VIEW`. Обновить
+представление не получится так что просто удаляем его и создаем заново.
+
+```sql
+    // Создаем представление
+    CREATE VIEW ProductCustomers AS
+
+    // Далее указываем просто сам запрос
+    SELECT name, contact, prod_id
+    FROM Customers, Orders, OrderItem
+    WHERE Customers.cust_id = Orders.cust_id
+    AND OrderItem.order_num = Orders.order_num;
+```
+
+Эта команда создает представление с названием ProductCustomers.
+После этого если сделать запрос типа:
+
+```sql 
+    SELECT * 
+    FROM ProductCustomers;
+```
+
+То получим всех клиентов сделавших заказ, то есть в таблице
+ProductCustomers уже будут находиться все записи объединенные по 
+условию:
+
+```sql
+    WHERE Customers.cust_id = Orders.cust_id
+    AND OrderItem.order_num = Orders.order_num;
+```
+
+Когда мы делаем извлечение данных из представления, то просто
+берется наше условие в SELECT и добавляется к условию выборки 
+самого представления.
+
 
 Чем нам это может помочь, в `postgres` нет возможности изменить порядок уже 
 существующих столбцов в таблице, так же и нет возможности вставить новый столбец
