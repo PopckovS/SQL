@@ -38,7 +38,7 @@ SQL
 - [Конструкция `CASE`](SQL/case_1.md)
 - [Запросы №1](SQL/lesson_3.md)
 - [Уникальный идентификатор `UUID`](SQL/uuid.md)
-- [Создание представлений](SQL/view.md)
+- [Представления `VIEW`](SQL/view.md)
 - [Дата и Время](SQL/datetime.md)
 - [Примеры SQL запросов](SQL/ex_1.md)
 - [Итоговые/агрегирующие функции](SQL/agregat.md)
