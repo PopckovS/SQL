@@ -562,6 +562,33 @@ WHERE
 ```
 ---
 
+№ 23
+---
+
+**Задача:**
+Вывести самый дорогой продукт 
+
+**Условие:**
+Вывести поля `good_name`,`unit_price`
+
+**Решение:**
+Один под запрос получает товар с максимальной ценой, далее мы просто 
+получаем товар у которого цена такая же как и у товара, что был получен 
+под запросом.
+
+```sql
+SELECT goo.good_name , pay.unit_price 
+FROM
+    Goods AS goo INNER JOIN 
+    Payments AS pay ON goo.good_id = pay.good
+WHERE 
+    pay.unit_price = (select max(unit_price) from Payments)
+;
+
+```
+---
+
+
 № 28
 ---
 
