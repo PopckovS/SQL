@@ -612,6 +612,35 @@ WHERE
 ```
 ---
 
+№ 29
+---
+
+**Задача:**
+Вывести имена тех пассажиров которые летали в `Moscow` на 
+самолете типа `TU-134`
+
+**Условие:**
+Вывести только имена
+
+**Решение:**
+Данные расположены в 2 таблицах, `Passenger` что содержит пассажиров
+и `Trip`, что содержит данные о путешествиях, соединим обе таблицы через
+таблицу посредника, и сделаем обычный выбор условием `WHERE`
+
+```sql
+SELECT DISTINCT
+    ps.name
+FROM
+   Passenger AS ps 
+   INNER JOIN join Pass_in_trip AS pit ON ps.id = pit.passenger
+   INNER JOIN Trip AS tr ON pit.trip = tr.id
+WHERE
+    tr.town_to = "Moscow"
+    AND 
+    tr.plane = "TU-134"
+;
+```
+---
 
 № 31
 ---
