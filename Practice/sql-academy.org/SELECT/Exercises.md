@@ -750,6 +750,32 @@ WHERE
 ---
 
 
+
+№ 40
+---
+
+**Задача:**
+Вывести все предметы которые ведет преподаватель `Romashkin`
+
+**Условие:**
+
+**Решение:**
+
+```sql
+SELECT 
+    name AS subject
+FROM Subject 
+    JOIN Schedule ON Subject.id = Schedule.subject 
+    JOIN Teacher ON Schedule.teacher = Teacher.id
+WHERE Teacher.last_name = 'Romashkin' 
+    AND Teacher.first_name LIKE 'P%'
+    AND Teacher.middle_name LIKE 'P%'
+;
+```
+---
+
+
+
 № 41
 ---
 
