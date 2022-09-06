@@ -47,3 +47,69 @@ WHERE sequence_name = 'seq_1';
 каталоге `Sequences`
 
 ![ Структура ](img/seq_1.png)
+
+---
+Таблицы и последовательности
+---
+
+Для понимания, что такое последовательности, давайте начнем с самого начала,
+создадим таблицу, в самой ее базовой форме, без каких либо последовательностей,
+первичных ключей и автоинкрементаций, в этой таблице есть только столбцы и 
+ничего более. 
+
+```sql
+-- Создадим таблицу
+BEGIN;
+
+CREATE TABLE "table_1" 
+(
+ "id" integer NULL, 
+ "name" varchar(255) NULL, 
+ "title" varchar(255) NULL, 
+ "count" integer Null
+);
+
+COMMIT;
+
+-- Внесем данные
+INSERT INTO public.table_1 (id, "name", title, count) VALUES(1, '11', '111', 1111);
+INSERT INTO public.table_1 (id, "name", title, count) VALUES(2, '22', '222', 2222);
+INSERT INTO public.table_1 (id, "name", title, count) VALUES(1, '11', '111', 1111);
+INSERT INTO public.table_1 ("name", title, count) VALUES('33', '333', 3333);
+```
+
+Получившаяся таблица:
+
+| id   | name | title | count |
+|------|:----:|------:|------:|
+| 1    |  11  |   111 |   111 |
+| 2    |  22  |   222 |   222 |
+| 1    |  11  |   111 |   111 |
+| NULL |  33  |   333 |  3333 |
+
+Как можем видеть, это просто таблица с 4 столбцами, по скольку для таблицы не 
+определен ни `AUTOINCREMENT` ни `PRIMARY KEY` то записи могут полностью 
+дублироваться, из-за чего нельзя обеспечить уникальность каждой конкретной строки,
+так и в столбце `id` могут быть пустые значения, по скольку поле не 
+автоинкрементируется, и значению в нем просто неоткуда появиться.
+
+---
+
+В самом начале мы уже создали последовательность с названием `sqe_1` которая 
+по дефолту создается с типом `bigint`, несколько раз вызвав команду 
+`SELECT nextval('seq_1')` мы увеличили счетчик последовательности до числа `18`.
+Теперь создадим новую таблицу
+
+
+```sql
+BEGIN;
+CREATE TABLE "table_2" 
+(
+ "id" bigint NOT NULL PRIMARY KEY DEFAULT (nextval('seq_1')), 
+ "name" varchar(255) NULL UNIQUE
+);
+COMMIT;
+
+INSERT INTO table_2 (name) VALUES('hello world 1');
+INSERT INTO table_2 (name) VALUES('hello world 2');
+```
