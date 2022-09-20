@@ -61,5 +61,10 @@ DELETE FROM customers RETURNING *;
  6437 | Jamil
 ```
 
+---
 
+Возвращать можно все значения, а не только отдельные столбцы.
 
+```sql
+... RETURNING *;
+```
