@@ -265,3 +265,39 @@ CREATE TABLE report (
 );
 ALTER SEQUENCE report_id_seq OWNED BY report.id;
 ```
+
+---
+Возможные ошибки
+---
+
+Тот факт, что поле первичного ключа связано с последовательностью, не избавляет 
+нас от ошибок. Если вставить в таблицу строку с прямым указанием `id` который должен
+формироваться из последовательности автоматически, то при последующем создании новых 
+строк мы получим ошибку ибо последовательность не знает что мы внесли `id` на прямую.
+
+```sql
+ CREATE TABLE public.report (
+	id bigserial NOT NULL,  
+	name varchar(255) NOT NULL,
+	is_active bool NOT NULL,
+	CONSTRAINT report_pkey PRIMARY KEY (id)
+);
+
+-- создали id до 5
+INSERT INTO public.report (name, is_active) VALUES ('name', TRUE) RETURNING *;
+
+-- в ручную внесли id = 6 
+INSERT INTO public.report (id, name, is_active) VALUES (6, 'name', TRUE) RETURNING *;
+
+-- последовательность сгенерирует id = 6 который уже присутствует в таблице
+-- и попытка его внесения приведет к ошибке первичного ключа
+INSERT INTO public.report (name, is_active) VALUES ('name', TRUE) RETURNING *;
+```
+
+Получим ошибку типа
+
+``` 
+SQL Error [23505]: ОШИБКА: повторяющееся значение ключа нарушает ограничение
+ уникальности "report_pkey".
+Подробности: Ключ "(id)=(6)" уже существует.
+  ```
