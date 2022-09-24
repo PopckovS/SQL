@@ -42,6 +42,9 @@ SQL
 
 4. **[№4 Ограничения БД : ](SQL/sql_4.md)**
 
+5. Индексы
+      - **[Теория](index/index_1.md)**
+     
 - [Условные выражения в `Postgres`](SQL/expression.md)
 - [Конструкция `CASE`](SQL/case_1.md)
 - [Запросы №1](SQL/lesson_3.md)
