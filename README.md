@@ -58,6 +58,7 @@ SQL
 - [Объединение `JOIN`](SQL/join_1.md)
 - [Последовательности](SQL/sequence_1.md)
 - [Возвращение RETERNING ](SQL/reterning_1.md)
+- [Перечисление ENUM ](SQL/enum_1.md)
 
 ___
 Практическое владение языком SQL
