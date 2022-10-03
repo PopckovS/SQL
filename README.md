@@ -31,6 +31,9 @@ SQL
 Язык SQL
 ---
 
+0. [№1](SQL/1.md)
+
+
 1. **[№1 : ](SQL/sql_1.md)**
     - Оператор `SELECT`
 
@@ -59,6 +62,7 @@ SQL
 - [Последовательности](SQL/sequence_1.md)
 - [Возвращение RETERNING ](SQL/reterning_1.md)
 - [Перечисление ENUM ](SQL/enum_1.md)
+- [Массивы ](SQL/array_1.md)
 
 ___
 Практическое владение языком SQL
