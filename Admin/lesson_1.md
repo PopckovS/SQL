@@ -94,6 +94,15 @@ CREATE TYPE request_state AS ENUM ('created', 'approved', 'finisshed');
 Что такое аутентификация `Peer`
 ---
 
+По дефолту с установкой `postgres` в системе создается специальный пользователь,
+с именем `postgres`, и в самой СУБД создается БД с аналогичным названием 
+`postgres`, это для создания реализации специальной аутентификации называемой 
+`peer`.
+
+`peer` аутентификация, проводит параллель между пользователем и БД в СУБД 
+`postgres`, для отключения такого поведения, требуется поменять настройки
+аутентификации, сделать это можно в настройках СУБД `postgres`
+
 Входим в postgres как суперпользователь
 
     sudo -u postgres psql
@@ -103,16 +112,21 @@ CREATE TYPE request_state AS ENUM ('created', 'approved', 'finisshed');
     ALTER USER postgres PASSWORD '<new-password>';
 
 Меняем настройки доступа в файле с настройками для постгресса, он 
-находится по пути
-`/etc/postgresql/<postgres_version>/main/pg_hba.conf`
+находится по пути `/etc/postgresql/<postgres_version>/main/pg_hba.conf`
 
-Меняем доступ с `peer`
+Меняем аутентификацию с `peer`
 
-    local   all         all                  peer
+```
+  # Database administrative login by Unix domain socket
+  local all postgres md5
+```
 
-на доступ типа `md5`
+На аутентификацию типа `md5`
 
-    local   all         all                  md5
+```
+    # Database administrative login by Unix domain socket
+    local all all md5
+```
 
 Перезагружаем сервис постгресса
 
