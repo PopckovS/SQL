@@ -63,6 +63,7 @@ SQL
 - [Возвращение RETERNING ](SQL/reterning_1.md)
 - [Перечисление ENUM ](SQL/enum_1.md)
 - [Массивы ](SQL/array_1.md)
+- [Обобщенные табличные выражения WITH ](SQL/with_1.md)
 
 ___
 Практическое владение языком SQL
