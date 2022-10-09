@@ -13,7 +13,9 @@ SQL
 
 2) [Администрирование `Postgres`](Admin/lesson_1.md)
 
-3) [Системные таблицы](Admin/lesson_2.md)
+3) [Аутентификация](Admin/auth_1.md)
+
+4) [Системные таблицы](Admin/lesson_2.md)
 
 5) [Расширения](Admin/app_1.md)
 
