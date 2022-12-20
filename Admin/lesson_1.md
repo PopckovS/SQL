@@ -1,11 +1,26 @@
----
 Утилита `psql`
 ---
 
-> Войти в БД под указанным пользователем
+`-c` Выполнить команду `SQL` или `psql` вывести результат и выйти 
 
+```
+  psql -c "sql команда" -U postgres
+  
+  # Показать всех пользователей командой sql
+  psql -c "select * from pg_user;" -U postgres
+  
+  # Можно выполнять и команды администрирования
+  psql -c "\l" -U postgres
+```
+
+---
+
+Войти в БД под указанным пользователем
+
+```
     psql -U <user_name>
     psql -U postgres
+```
 
 ---
 
@@ -141,7 +156,7 @@ CREATE TYPE request_state AS ENUM ('created', 'approved', 'finisshed');
 
 - Изменить пароль для пользователя
 
-    >    ALTER USER user_name WITH ENCRYPTED PASSWORD '123';
+    > ALTER USER user_name WITH ENCRYPTED PASSWORD '123';
 
 - Переименовать БД, сделать это можно если нет активных подключений к ней
 

@@ -37,11 +37,12 @@ SQL
 
 
 1. **[№1 : ](SQL/sql_1.md)**
-    - Оператор `SELECT`
+    - Операторы `SELECT`, `DISTINCT`, `LIMIT`, `OFFSET`, `ORDER BY`
+    - `WHERE`, `ASC`, `DESC`, `LIKE`, `NOT LIKE`, `ILIKE`
 
 2. **[№2 : ](SQL/sql_2.md)**
     - Вычисляемые поля
-    - Агрегатные функции
+    - Агрегатные функции: `MIN`, `MAX`, `COUNT`, `AVG`, `SUM`
 
 3. **[№3 Функции обработки : ](SQL/sql_3.md)**
 
