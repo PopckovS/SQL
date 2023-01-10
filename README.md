@@ -1,11 +1,9 @@
-SQL 
----
-
 Теория
 ---
 1) [Транзакции `ACID`](Theory/transaction_1.md)
+2) [Как спроектировать модель данных](Theory/data_model_1.md)
 
-
+---
 Установка, администрирование, расширения.
 ---
 
@@ -23,6 +21,7 @@ SQL
 
 7) [Типы данных в Postgres](Admin/type.md)
 
+---
 Права, Пользователи и Роли
 ---
 
@@ -30,58 +29,103 @@ SQL
 
 
 ---
-Язык SQL
+SQL Основное:
 ---
 
-0. [№1](SQL/1.md)
+- [Запросы `SELECT` ](SQL/sql_1.md) 
+  - `SELECT`, `DISTINCT`, `LIMIT`, `OFFSET`, `ORDER BY`
+  - `WHERE`, `ASC`, `DESC`, `LIKE`, `NOT LIKE`, `ILIKE`
 
 
-1. **[№1 : ](SQL/sql_1.md)**
-    - Операторы `SELECT`, `DISTINCT`, `LIMIT`, `OFFSET`, `ORDER BY`
-    - `WHERE`, `ASC`, `DESC`, `LIKE`, `NOT LIKE`, `ILIKE`
+- [Агрегации: ](SQL/sql_2.md)
+  - Агрегатные функции: `MIN`, `MAX`, `COUNT`, `AVG`, `SUM`
+  - Вычисляемые поля
 
-2. **[№2 : ](SQL/sql_2.md)**
-    - Вычисляемые поля
-    - Агрегатные функции: `MIN`, `MAX`, `COUNT`, `AVG`, `SUM`
 
-3. **[№3 Функции обработки : ](SQL/sql_3.md)**
+- [Функции обработки : ](SQL/sql_3.md)
 
-4. **[№4 Ограничения БД : ](SQL/sql_4.md)**
 
-5. Индексы
-      - **[Теория](index/index_1.md)**
-     
-- [Условные выражения в `Postgres`](SQL/expression.md)
-- [Конструкция `CASE`](SQL/case_1.md)
-- [Запросы №1](SQL/lesson_3.md)
-- [Уникальный идентификатор `UUID`](SQL/uuid.md)
-- [Представления `VIEW`](SQL/view.md)
-- [Дата и Время](SQL/datetime.md)
-- [Примеры SQL запросов](SQL/ex_1.md)
-- [Итоговые/агрегирующие функции](SQL/agregat.md)
-- [Группировки](SQL/group_1.md)
-- [Поиск по регулярному выражению](SQL/reg_1.md)
-- [Объединение `JOIN`](SQL/join_1.md)
-- [Последовательности](SQL/sequence_1.md)
-- [Возвращение RETERNING ](SQL/reterning_1.md)
-- [Перечисление ENUM ](SQL/enum_1.md)
-- [Массивы ](SQL/array_1.md)
-- [Обобщенные табличные выражения WITH ](SQL/with_1.md)
+- [Уникальный идентификатор `UUID`](SQL/uuid.md) 
+
+
+- [Изменение, Удаление](SQL/delete.md)
+    - `DROP`, `DELETE`, `IF EXISTS`, `TRUNCATE`
+
+
+---
+SQL продвинутое:
+---
+
+ - [Группировки](SQL/group_1.md)
+   - Группировка`GROUP BY`
+   - Фильтрация групп `HAVING`
+
+
+ - [Объединение JOIN](SQL/join_1.md)
+   - `INNER JOIN`
+   - `LEFT`, `RIGHT JOIN`
+   - `SELF`, `CROSS JOIN`
+
+
+ - [Условные выражения](SQL/expression.md)
+   - `CASE`, `COALESCE`, `NULLIF`, `GREATEST`, `LEAST`
+
+
+ - [Оконные функции](SQL/over_1.md)
+
+
+---
+SQL Структуры данных
+---
+
+   - [Представления `VIEW`](SQL/view.md)
+       - Перенаправление `CRUD` операций на оригинальную таблицу   
+       - `CREATE VIEW`, `DROP VIEW`
+
+
+   - [Обобщенные табличные выражения `WITH` ](SQL/with_1.md)
+
+
+   - [Последовательности `SEQUENCE` ](SQL/sequence_1.md)
+
+
+   - [Перечисление `ENUM` ](SQL/enum_1.md)
+
+
+   - [Ограничения в БД](SQL/sql_4.md)
+
+
+   - [Разное ](SQL/other_1.md)
+     - `RETERNING`, `TRUNCATE`
+
+
+---
+Оптимизация, Индексы
+---
+
+
+  - [Анализ](index/analyze.md)
+
+
+  - [Индексы](index/index_1.md)
+    - Индексы, оптимизация запросов
+
 
 ___
 Практическое владение языком SQL
 ---
 
-1) Решение упражнений с сайта [sql-academy.org :](https://sql-academy.org/)
+1)  **[Решение упражнений с сайта `sql-academy.org` :](https://sql-academy.org/)**
     - [Задачи на `SELECT`](Practice/sql-academy.org/SELECT/Exercises.md)
 
 
-2) Решение упражнений с сайта [sql-ex.ru :](http://sql-ex.ru)
+2) **[Решение упражнений с сайта `sql-ex.ru` :](http://sql-ex.ru)**
     - [Задачи на `SELECT`](Practice/sql-ex.ru/SELECT/Exercises.md)
 
+---
 Другое
 ---
 
 1) Интересные вопросы по SQL 
    
-   - [Часть 1](Other-/other_1.md)
+   - [Часть 1](Other/other_1.md)
