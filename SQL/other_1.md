@@ -1,4 +1,4 @@
-RETERNING
+Возвращение исполняемых команд `RETERNING`
 ---
 Имеется таблица:
 
@@ -68,3 +68,6 @@ DELETE FROM customers RETURNING *;
 ```sql
 ... RETURNING *;
 ```
+
+
+
