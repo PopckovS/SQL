@@ -1,11 +1,11 @@
-Удаление
+Удаление Таблицы
 ---
 
 Для удаления таблицы есть специальная команда `DROP`, ее можно использовать в 
 комбинации с командой `IF EXISTS`, что бы удалить таблицу только если она существует.
 
 ```sql
-    DROP TABLE IF EXISTS table1;
+DROP TABLE IF EXISTS table1;
 ```
 
 ---
@@ -22,7 +22,14 @@ DELETE FROM table_name;
 TRUNCATE TABLE table_name;
 ```
 
+---
+Удалить записи по Условию
+---
 
+Удаление из таблицы поддерживает условие выборки `WHERE`.
 
-
+```sql
+DELETE FROM public.images 
+WHERE id > 20 AND id < 1000;
+```
 

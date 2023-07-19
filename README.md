@@ -61,7 +61,8 @@ SQL продвинутое:
    - Фильтрация групп `HAVING`
 
 
- - [Объединение JOIN](SQL/join_1.md)
+ - [Объединение таблиц, JOIN](SQL/join_1.md)
+   - `UNION`, `UNION ALL`
    - `INNER JOIN`
    - `LEFT`, `RIGHT JOIN`
    - `SELF`, `CROSS JOIN`
